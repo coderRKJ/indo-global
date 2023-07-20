@@ -1,0 +1,24 @@
+{
+  "name": "alpine-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "lint": "eslint .",
+    "predeploy": "npm run generate",
+    "deploy": "gh-pages --dotfiles -d dist"
+  },
+  "devDependencies": {
+    "@nuxt-themes/alpine": "^1.6.2",
+    "@nuxt/devtools": "^0.6.7",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxtjs/plausible": "^0.2.1",
+    "@types/node": "^20.4.0",
+    "eslint": "^8.44.0",
+    "gh-pages": "^5.0.0",
+    "nuxt": "^3.6.2"
+  }
+}
