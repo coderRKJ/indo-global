@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   app: {
-    baseURL: '/nuxt-github-pages/'
+    baseURL: '/indo-global/'
   },
 
   // https://github.com/nuxt-themes/alpine
