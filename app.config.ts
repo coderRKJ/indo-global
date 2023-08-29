@@ -11,8 +11,8 @@ export default defineAppConfig({
     header: {
       position: 'left', // possible value are : | 'left' | 'center' | 'right'
       logo: {
-        path: '/logo.svg', // path of the logo
-        pathDark: '/logo-dark.svg', // path of the logo in dark mode, leave this empty if you want to use the same logo
+        path: '/images/glob-logo.png', // path of the logo
+        pathDark: '/images/glob-logo-dark.png', // path of the logo in dark mode, leave this empty if you want to use the same logo
         alt: 'Indo Global' // alt of the logo
       }
     },
