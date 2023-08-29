@@ -3,8 +3,8 @@ export default defineAppConfig({
     title: 'Indo Global',
     description: 'Indo-Global Chamber of Commerce',
     image: {
-      src: '/social-card-preview.png',
-      alt: 'An image showcasing my project.',
+      src: '/images/businessman-touching-virtual-screen.jpg',
+      alt: 'Indo-Global Chamber of Commerce.',
       width: 400,
       height: 300
     },
