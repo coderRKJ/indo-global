@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
 
+  css: ['~/assets/styles/main.scss'],
+  
   // https://github.com/nuxt-themes/alpine
   extends: '@nuxt-themes/alpine',
 
