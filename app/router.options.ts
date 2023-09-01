@@ -18,9 +18,11 @@ export default <RouterConfig>{
         to.hash = to.hash.replace("Link", "");
       }
 
-      const milliSeconds = from.path=='/'? 10: 100;
+      const milliSeconds = from.path=='/'? 10: 1000;
       return new Promise((resolve) => {
         setTimeout(() => {
+          console.log(`Routing to: ${to.hash}`);
+          
           resolve({
             el: to.hash,
             top: 70,
