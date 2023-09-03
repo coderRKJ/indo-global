@@ -1,7 +1,7 @@
 export default defineAppConfig({
   alpine: {
-    title: 'Indo Global',
-    description: 'Indo-Global Chamber of Commerce',
+    title: 'Indo-Global Chamber of Commerce',
+    description: 'A gateway to seamless global business operations.',
     image: {
       src: '/images/businessman-touching-virtual-screen.jpg',
       alt: 'Indo-Global Chamber of Commerce.',
@@ -21,7 +21,7 @@ export default defineAppConfig({
         enabled: false, // possible value are : true | false
         repository: 'https://www.github.com/nuxt-themes/alpine' // our github repository
       },
-      navigation: true, // possible value are : true | false
+      navigation: false, // possible value are : true | false
       alignment: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
       message: 'Follow Indo Global on' // string that will be displayed in the footer (leave empty or delete to disable)
     },
