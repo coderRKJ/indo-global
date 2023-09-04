@@ -28,7 +28,8 @@ const articles = computed(() => _articles.value || [])
     <p>
       You can start by
       <!-- eslint-disable-next-line -->
-      <ProseA href="https://alpine.nuxt.space/articles/write-articles">creating</ProseA> one in the <ProseCodeInline>articles</ProseCodeInline> folder.
+      <ProseA href="https://alpine.nuxt.space/articles/write-articles">creating</ProseA> one in the <ProseCodeInline>
+        articles</ProseCodeInline> folder.
     </p>
   </div>
 </template>

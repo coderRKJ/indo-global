@@ -53,10 +53,8 @@ function convertToLink(path: string) {
   <nav>
     <ul>
       <li v-for="link of navigation" :key="link._path">
-        <NuxtLink 
-          :to="convertToLink(link._path)" :class="{ active: link._path.replace('/', '') === activeSection }"
-          @click="handleClick"
-        >
+        <NuxtLink :to="convertToLink(link._path)" :class="{ active: link._path.replace('/', '') === activeSection }"
+          @click="handleClick">
           <span class="underline-fx" />
           {{ link.title }}
         </NuxtLink>

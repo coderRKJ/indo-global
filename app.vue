@@ -4,8 +4,8 @@
   </AppLayout>
 </template>
   
-  <style>
-  html {
-    font-family: sans-serif;
-  }
-  </style>
+<style>
+html {
+  font-family: sans-serif;
+}
+</style>

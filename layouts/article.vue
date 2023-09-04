@@ -2,35 +2,23 @@
   <Container>
     <article>
       <!-- TODO: could be refactored as a transparent ButtonLink -->
-      <NuxtLink
-        :to="parentPath"
-        class="back"
-      >
+      <NuxtLink :to="parentPath" class="back">
         <Icon name="ph:arrow-left" />
         <span>
           Back
         </span>
       </NuxtLink>
       <header>
-        <h1
-          v-if="page?.title"
-          class="title"
-        >
+        <h1 v-if="page?.title" class="title">
           {{ page.title }}
         </h1>
-        <time
-          v-if="page?.date"
-          :datetime="page.date"
-        >
+        <time v-if="page?.date" :datetime="page.date">
           {{ formatDate(page.date) }}
         </time>
       </header>
       <div class="prose">
         <slot />
-        <div
-          v-if="alpine?.backToTop"
-          class="back-to-top"
-        >
+        <div v-if="alpine?.backToTop" class="back-to-top">
           <!-- Can link to current path as router is configered to scroll to top -->
           <ProseA :href="route.path">
             {{ alpine?.backToTop?.text || 'Back to top' }}
@@ -58,7 +46,7 @@ if (page.value && page.value.cover) {
 }
 
 const parentPath = computed(
-  () => {    
+  () => {
     const pathTabl = route.path.split('/')
     pathTabl.pop()
     return { path: '/', hash: `#${pathTabl.pop()}Link` }

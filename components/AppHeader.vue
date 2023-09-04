@@ -27,14 +27,9 @@ const show = ref(false)
       <NuxtLink v-if="alpine.header?.logo" to="/">
         <!-- TODO: width/height doesn't make much sense here, but Lighthouse requires it. 
         Used current Alpine logo ratio, will break on enduser logo -->
-        <NuxtImg
-          class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt" width="54"
-          height="32"
-        />
-        <NuxtImg 
-          class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt" width="54" 
-          height="32"
-        />
+        <NuxtImg class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt" width="54"
+          height="32" />
+        <NuxtImg class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt" width="54" height="32" />
       </NuxtLink>
       <NuxtLink v-else to="/" class="fallback">
         {{ alpine.title }}
