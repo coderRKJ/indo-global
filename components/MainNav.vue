@@ -3,37 +3,29 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const { navigation } = useContent()
 const router = useRouter()
 
+const titles = computed(
+  () => navigation.value.map((link: { title: string; }) => link.title.length ? link.title : "Indo-Global Chamber of Commerce")
+)
+const hashes = computed(
+  () => navigation.value.map((link: { _path: string; }) => link._path.replace('/', ''))
+)
 const activeSection = ref("")
-
-const hashes = ["services", "trade", "events", "resources", "membership", "support", "contact"];
-const map = new Map([
-  ["", "Indo-Global Chamber of Commerce"],
-  ["services", "Services"],
-  ["trade", "Trade Services"],
-  ["events", "Events & Programs"],
-  ["resources", "Resources and Tools"],
-  ["membership", "Membership"],
-  ["support", "Business Support"],
-  ["contact", "Contact Us"]
-])
 
 const handleScroll = () => {
   activeSection.value = "";
+  // Prevent link highlight & setting page title if not root
   if (router.currentRoute.value.path != "/") return;
 
-  for (const hash of hashes) {
-    const el = document.getElementById(hash);
+  // Ignore first section
+  for (let i = 1; i <= hashes.value.length; i++) {
+    const el = document.getElementById(hashes.value[i]);
     if (el == null) continue;
     const rect = el.getBoundingClientRect();
     if (rect.top <= 75 && rect.bottom >= 75) {
-      activeSection.value = hash;
+      activeSection.value = hashes.value[i];
+      useHead({ title: titles.value[i] })
       break;
     }
-  }
-
-  const value = map.get(activeSection.value);
-  if (value) {
-    useHead({title: value})
   }
 }
 
@@ -61,7 +53,7 @@ function convertToLink(path: string) {
   <nav>
     <ul>
       <li v-for="link of navigation" :key="link._path">
-        <NuxtLink
+        <NuxtLink 
           :to="convertToLink(link._path)" :class="{ active: link._path.replace('/', '') === activeSection }"
           @click="handleClick"
         >

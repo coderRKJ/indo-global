@@ -31,6 +31,7 @@
           v-if="alpine?.backToTop"
           class="back-to-top"
         >
+          <!-- Can link to current path as router is configered to scroll to top -->
           <ProseA :href="route.path">
             {{ alpine?.backToTop?.text || 'Back to top' }}
             <Icon :name="alpine?.backToTop?.icon || 'material-symbols:arrow-upward'" />

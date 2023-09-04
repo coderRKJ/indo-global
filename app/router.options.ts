@@ -1,31 +1,20 @@
 import type { RouterConfig } from "@nuxt/schema";
 
-// const redirects = [
-//   "/services",
-//   "/trade",
-//   "/events",
-//   "/resources",
-//   "/membership",
-//   "/support",
-//   "/contact",
-// ];
-
 export default <RouterConfig>{
   scrollBehavior: (to, from, savedPosition) => {
     if (to.hash) {
-      // Convoluted way to prevent default behaviour of browser # scrolling
+      // To prevent default behaviour of browser # scrolling
       if (typeof to.hash == "string") {
         to.hash = to.hash.replace("Link", "");
       }
 
-      const milliSeconds = from.path=='/'? 10: 1000;
+      // Loading of main content takes some time
+      const milliSeconds = from.path=='/'? 10: 500;
       return new Promise((resolve) => {
-        setTimeout(() => {
-          console.log(`Routing to: ${to.hash}`);
-          
+        setTimeout(() => {          
           resolve({
             el: to.hash,
-            top: 70,
+            top: 70, // Approximate height of navbar
             behavior: "smooth",
           });
         }, milliSeconds);
@@ -36,7 +25,7 @@ export default <RouterConfig>{
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve({ top: 0 });
-        }, 100);
+        }, 250);
       });
     }
   },
